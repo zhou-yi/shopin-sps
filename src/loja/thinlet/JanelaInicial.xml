@@ -1,0 +1,75 @@
+<panel columns="1">
+  <menubar >
+    <menu text="Base">
+     
+      
+         
+        <menuitem text="Guardar" action= "guardar()"/>
+        
+        <menuitem text="Sair" action= "sair()"/>
+     
+    </menu>
+    
+      <menu text="Operacoes">
+     
+      
+        
+        <menuitem text="POS" action="POS()" />
+        
+       
+     
+    </menu>
+     <menu text="Gestao">
+     
+      
+        <menu text="Produtos">
+        
+        
+       
+        <menuitem text="Gerir" action="abreJanelaProdutos()"/>
+        <menuitem text="Listar" action="listarProdutos(texto)"/>
+        </menu>
+        
+        
+         <menu text="Fornecedores">
+        
+        
+       
+        <menuitem text="Gerir" action="FornGerir()"/>
+        <menuitem text="Listar" action="FornListar()"/>
+        </menu>
+        
+      
+         <menu text="Facturas">
+        
+        
+       
+        <menuitem text="Gerir" action="abreJanelaFact()"/>
+        <menuitem text="Listar" action="FactListar(texto)"/>
+        </menu>
+        
+        <menuitem text="Limpar Janela" action="limparJanela(texto)"/>
+     
+   
+    </menu>
+    
+      <menu text="Ajuda">
+
+     
+      
+        
+        <menuitem text="Acerca deste programa" action="ajuda()" />
+        </menu>  
+        
+        
+  </menubar>
+  <panel name="segundo" >
+  
+  
+  <textarea name="texto"  columns="62" rows="29"  />
+ 
+
+
+
+</panel>
+</panel>

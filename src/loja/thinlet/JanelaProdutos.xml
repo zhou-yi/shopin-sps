@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<panel name="principal" columns="1" border="true">
+
+	<panel name="botoes" columns="3" weightx="1">
+		<button text="Cancela" action="cancela()" weightx="1"/>
+		<button text="Remove" action="remove(c.text, pv.text, nome.text, unidade.text, barras.text, a.text, m.text, d.text, perecivel.selected )" weightx="1"/>
+		<button text="Adiciona" action="adiciona(c.text, pv.text, nome.text, unidade.text, barras.text, a.text, m.text, d.text, perecivel.selected )" weightx="1"/>
+
+		
+		
+	</panel>
+	
+	<panel name="tabelas" columns="2" gap="2" >
+		
+		<panel text="Tipo de Produto" name="tipos" columns="1" top="80"  left="2" gap="20" border="true" bottom="20">
+		
+			<checkbox name="perecivel" text="Perecível" group="group" selected="true" />
+			<checkbox text="Não Perecível" group="group"/>
+		</panel>
+		
+		<panel name="dados" text="Produto" columns="2" top="20" left="10"  gap="20" border="true" bottom="20">
+		
+		
+		<label text="Codigo"   />
+		
+<textfield name="c" columns="30"   />
+<label text="Preco de venda" />
+<textfield name="pv" columns="30"  />
+<label text="Nome"  />
+<textfield name="nome" columns="30"   />
+<label text="Unidade" />
+<textfield name="unidade" columns="30"   />
+<label text="Codigo de Barras" />
+<textfield name="barras" columns="30"   />
+		</panel>
+		
+	</panel>
+	<panel name="Datas" text="Data de Fabrico" columns="6" top="20" gap="2" border="true" bottom="20" left="80" >
+		
+		
+			
+		
+		<label text="Dia"   />
+		<textfield name="d" columns="2"   />
+		<label text="Mes" />
+		<textfield name="m" columns="2"   />
+		<label text="Codigo de Ano" />
+		<textfield name="a" columns="2"   />
+		
+	
+
+
+
+		</panel>
+	
+</panel>
+</panel>
+
+
