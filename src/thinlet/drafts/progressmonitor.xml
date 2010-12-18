@@ -1,3 +1,0 @@
-<panel>
-	<button text="Start" action="start(thinlet)" />
-</panel>

@@ -1,18 +1,15 @@
 package loja;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.InputMismatchException;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
-import loja.gui.InterfaceJanelas;
 import loja.gui.ILoja;
-import loja.gui.InterfaceTextual;
+import loja.thinlet.InterfaceXML;
 
 /***********************************************************
  * @author FBA 2009/03/10
@@ -48,9 +45,22 @@ public class Main
 			System.out.println("Carregou " + dados.produtos().size() + " produtos.");
 			System.out.println("Carregou " + dados.facturas().size() + " facturas.");
 			
-			// Escolha aqui qual das interfaces pretende
-			iface = new InterfaceJanelas(dados);
+	//		 Escolha aqui qual das interfaces pretende
+//		iface = new InterfaceJanelas(dados);
 //			iface = new InterfaceTextual(dados);
+			try {
+				InterfaceXML int_xml = new InterfaceXML(dados);
+				int_xml.Mostra();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+//			try {
+//				new FrameLauncher("Loja", new InterfaceXML(dados), 400, 300);
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 		}
 		catch (UserCancelException e)
 		{
