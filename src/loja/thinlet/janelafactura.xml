@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<splitpane orientation="vertical" divider="20" >
+
+<panel  columns="8" gap="4" >
+<label text="código" />
+<textfield name="codigo" columns="8" action="procuraPorCodigo( codigo,  text_area,  dia , mes,  ano)"/>
+<label text="dia"/>
+<textfield name="dia" columns="2"/>
+<label text="mês" />
+<textfield name="mes" columns="2"/>
+<label text="ano"/>
+<textfield name="ano" columns="4"/>
+
+
+</panel>
+
+<splitpane orientation="horizontal" divider="200">
+<splitpane orientation="vertical" divider="120">
+
+
+
+<panel text="Tipo de Produto" font="bold" columns="1" gap="4" border="true">
+ 
+<checkbox text="Perecível" group="group" name="perecivel"  selected="true"/>
+<checkbox text="Não Perecível" group="group"/>
+
+</panel>
+
+<panel columns="1"  >
+<combobox name="combo_box" text="Escolher Produto" weightx="1"  init="iniciaComboBox(this)" action="iniciavalores(combo_box, quantidade,valorunitario,subtotal)" >
+
+
+</combobox>
+
+<panel text="Factura" font="bold" columns="2" gap="4" border="true">
+<label text="Quantidade"/>
+<textfield text="1" name="quantidade" columns="10"/>
+<label text="Valor unitário" />
+<textfield text="1.0" name="valorunitario" columns="10"/>
+<label text="Subtotal"/>
+<textfield text="1.0" name="subtotal" columns="10"/>
+</panel>
+<panel columns="2">
+<button text="Adiciona" weightx="1" weighty="1"   action="adiciona( combo_box,  quantidade,   text_area, codigo, dia , mes, ano)"/>
+<button text="Retira"   weightx="1" weighty="1" action="retira( combo_box,  quantidade,   text_area, codigo, dia , mes, ano)"/>
+</panel>
+</panel>
+
+</splitpane>
+<splitpane orientation="vertical" divider="325">
+<panel  text="Linhas da Factura" font="bold" border="true">
+<textarea name="text_area" weightx="1" weighty="1"/>
+</panel>
+<splitpane orientation="vertical" divider="200">
+<splitpane orientation="horizontal" divider="300">
+<panel  text="Sentido da Ordenação" font="bold" border="true" columns="1">
+<checkbox text="Crescente" group="group1" name="crescente"  selected="true" action="setCrescente(porvalor, text_area, codigo, dia, mes, ano)"/>
+<checkbox text="Decrescente" group="group1" action="setDecrescente(porvalor, text_area, codigo, dia, mes, ano)"/>
+</panel>
+<panel  text="Tipo de Ordenação" font="bold" border="true" columns="1">
+<checkbox text="por valor" group="group2" name="porvalor"  selected="true" action="setPorValor(crescente, text_area, codigo, dia, mes, ano)"/>
+<checkbox text="por produto" group="group2" action="setPorProduto(crescente, text_area, codigo, dia, mes, ano)"/>
+
+</panel>
+
+</splitpane>
+<panel columns="4" gap="4">
+<button text="Cancela" weightx="1" weighty="1"   action="cancela()"/>
+<button text="Apaga"   weightx="1" weighty="1" action="apaga( quantidade, text_area, codigo, dia , mes, ano)"/>
+<button text="Anula" weightx="1" weighty="1"   action="anula( quantidade, text_area, codigo, dia , mes, ano)"/>
+<button text="Fecha"   weightx="1" weighty="1" action="fecha()"/>
+</panel>
+</splitpane>
+</splitpane>
+</splitpane>
+
+</splitpane>

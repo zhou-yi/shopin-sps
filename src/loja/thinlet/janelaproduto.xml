@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<panel name="principal" columns="1" border="true">
+
+	<panel name="botoes" columns="3" weightx="1">
+		<button text="Cancela" action="cancelar()" weightx="1"/>
+		<button text="Remove" action="remove(check_box_perecivel, tfcodigo, pvenda,nome, unidade, cbarras,dia, mes, ano)" weightx="1"/>
+		<button text="Adiciona" action="adiciona(check_box_perecivel, tfcodigo, pvenda,nome, unidade, cbarras,dia, mes, ano  )" weightx="1"/>	
+	</panel>
+	
+	<panel name="tabelas" columns="2" gap="2" >
+		
+		<panel text="Tipo de Produto" name="tipos" columns="1" top="80"  left="2" gap="20" border="true" bottom="20">
+		
+			<checkbox name="check_box_perecivel" text="Perecível" group="group" action="setvalidade(Datas)" />
+			<checkbox name="check_box_nperecível" text="Não Perecivel" group="group" selected= "true" action="setfabrico(Datas)" />
+		</panel>
+		
+		<panel name="dados" text="Produto" columns="2" top="20" left="10"  gap="20" border="true" bottom="20">
+		
+		<label text="Codigo"   />
+			<textfield name="tfcodigo" columns="30"   />
+			<label text="Preco de venda" />
+			<textfield name="pvenda" columns="30"  />
+			<label text="Nome"  />
+			<textfield name="nome" columns="30"   />
+			<label text="Unidade" />
+			<textfield name="unidade" columns="30"   />
+			<label text="Codigo de Barras" />
+			<textfield name="cbarras" columns="30"   />
+		</panel>
+		
+	</panel>
+	<panel name="Datas" text="Data de Fabrico" columns="6" top="20" gap="2" border="true" bottom="20" left="80" >
+		
+		<label text="Dia"   />
+		<textfield name="dia" columns="2"   />
+		<label text="Mes" />
+		<textfield name="mes" columns="2"   />
+		<label text="Codigo de Ano" />
+		<textfield name="ano" columns="2"   />
+
+		</panel>
+	
+</panel>
+</panel>
+
+
