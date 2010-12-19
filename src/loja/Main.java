@@ -39,7 +39,7 @@ public class Main
 		}
 
 		dados = new BaseDados(
-				"data/produtos.txt", "data/facturas.txt", "data/linhas_factura.txt");
+				"data/produtos.txt", "data/facturas.txt", "data/linhas_factura.txt", "data/fornecedores.txt", "data/encomenda.txt", "data/linhas_encomenda.txt");
 		try
 		{
 			dados.carrega();

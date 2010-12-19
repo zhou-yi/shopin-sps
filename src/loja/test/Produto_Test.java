@@ -37,7 +37,7 @@ public class Produto_Test {
 		p1 = new Perecivel(777, 0.45, "Café", "cl", new CodigoBarras("5601234527712"), new Data(10, 3, 2009));
 		p3 = new NaoPerecivel(20,	0.55,	"Chá",	"bule",new CodigoBarras("5601232257544"), new Data(11, 3, 2009));
 		
-		dados = new BaseDados("data/produtos.txt", "data/facturas.txt", "data/linhas_factura.txt");
+		dados = new BaseDados("data/produtos.txt", "data/facturas.txt", "data/linhas_factura.txt", "data/fornecedores.txt", "data/encomenda.txt", "data/linhas_encomenda.txt");
 		try
 		{
 			dados.carrega();

@@ -10,7 +10,7 @@
 
 <panel text="Tipo De Fornecedor" font="bold" columns="1" gap="4" border="true">
  
-<checkbox text="Bebidas" group="group" name="perecivel"  selected="true"/>
+<checkbox text="Bebidas" group="group" selected="true"/>
 <checkbox text="Café" group="group"/>
 <checkbox text="Alimentos" group="group"/>
 

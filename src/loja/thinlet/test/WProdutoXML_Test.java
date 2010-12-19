@@ -27,7 +27,7 @@ public class WProdutoXML_Test {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		dados = new BaseDados("data/produtos.txt", "data/facturas.txt", "data/linhas_factura.txt");
+		dados = new BaseDados("data/produtos.txt", "data/facturas.txt", "data/linhas_factura.txt" , "data/fornecedores.txt", "data/encomenda.txt", "data/linhas_encomenda.txt");
 		try
 		{
 			dados.carrega();

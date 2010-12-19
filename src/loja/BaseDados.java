@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections; //import java.util.LinkedList;
 import java.util.InputMismatchException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner; //import java.util.Stack;
 
@@ -29,12 +30,16 @@ public final class BaseDados
 	private static String	ficheiroProdutos;
 	private static String	ficheiroFacturas;
 	private static String	ficheiroLinhasFactura;
+	private static String 	ficheiroFornecedores;
+	private static String 	ficheiroEncomenda;
+	private static String 	ficheiroLinhasEncomenda;
 
 	// The only requirement for data structures to be used in this
 	// database is that for each type T it provides the List<T> interface
 
 	private List<Produto>	produtos	= new ArrayList<Produto>();
 	private List<Factura>	facturas	= new ArrayList<Factura>();
+	public static LinkedList<Fornecedor> fornecedores = new LinkedList<Fornecedor>();
 
 	// private List<Produto> produtos = new Vector<Produto>();
 	// private List<Factura> facturas = new Vector<Factura>();
@@ -48,11 +53,14 @@ public final class BaseDados
 	/***********************************************************
      * 
      ***********************************************************/
-	public BaseDados(String fProdutos, String fFacturas, String fLinhasFactura)
+	public BaseDados(String fProdutos, String fFacturas, String fLinhasFactura, String fFornecedores, String fEncomenda, String fLinhasEncomenda)
 	{
 		ficheiroProdutos = fProdutos;
 		ficheiroFacturas = fFacturas;
 		ficheiroLinhasFactura = fLinhasFactura;
+		ficheiroFornecedores = fFornecedores;
+		ficheiroEncomenda = fEncomenda;
+		ficheiroLinhasEncomenda = fLinhasEncomenda;
 	}
 
 	/***********************************************************
@@ -158,6 +166,8 @@ public final class BaseDados
 	{
 		carregaProdutos(inicializaFicheiro(ficheiroProdutos));
 		carregaFacturas(inicializaFicheiro(ficheiroFacturas), inicializaFicheiro(ficheiroLinhasFactura));
+		carregaFornecedores(inicializaFicheiro(ficheiroFornecedores));
+		
 	}
 
 	/***********************************************************
@@ -234,14 +244,14 @@ public final class BaseDados
 			return;
 		}
 
-		// try
-		// {
-		// guardaFornecedores(new PrintWriter(new File(ficheiroFornecedores)));
-		// } catch (FileNotFoundException e)
-		// {
-		// e.printStackTrace();
-		// return;
-		// }
+		 try
+		 {
+		 guardaFornecedores(new PrintWriter(new File(ficheiroFornecedores)));
+		 } catch (FileNotFoundException e)
+		 {
+		 e.printStackTrace();
+		 return;
+		 }
 	}
 
 	/***********************************************************
@@ -407,5 +417,41 @@ public final class BaseDados
 			return ext;
 		}
 
+	}
+	private void carregaFornecedores(Scanner readFile)
+	{	
+		String name;
+		String address;
+		char productKind;
+		int id;
+		String contact;
+
+		while(readFile.hasNext())
+		{
+			name = readFile.nextLine().trim();
+			address = readFile.nextLine().trim();
+			id = readFile.nextInt();
+			productKind = readFile.next().charAt(0);
+			contact = readFile.nextLine().trim();
+
+			fornecedores.add(new Fornecedor(name, productKind, id, contact, address));
+		}
+
+		for(Fornecedor f: fornecedores)
+			System.out.println(f);
+	}
+
+	public static LinkedList<Fornecedor> fornecedores()
+	{
+		return fornecedores;
+	}
+	private void guardaFornecedores(PrintWriter out)
+	{	
+		for (Fornecedor f: fornecedores)
+		{
+			out.println(f.getName() + "\n" + f.getAddress() + "\n" + f.getId() 
+					+ " " + f.getProductKind() + " " + f.getContact() );
+		}
+		out.close();
 	}
 }
