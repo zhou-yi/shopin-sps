@@ -13,7 +13,7 @@
   
   
   <menu text="Gestão" >
-      <menu text="Produto">
+	<menu text="Produto">
         <menuitem text="Gerir" action="gerirProduto()" />        
         <menuitem text="Listar" action="listarProduto(text_area_xml)"/>
       </menu>
@@ -28,8 +28,9 @@
         <menuitem text="Gerir" action="gerirFactura()" />        
         <menuitem text="Listar" action="listarFactura(text_area_xml)"/>
       </menu>
+      <menuitem text="Stock" action="gerirStock()"/>
       <menuitem text="Limpar Janela"  action="limparJanela(text_area_xml)"/>
-    </menu>
+	</menu>
     
      <menu text="Ajuda">
       <menuitem text="Acerca Deste Programa" action="acercaPrograma()" />

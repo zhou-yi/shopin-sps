@@ -38,7 +38,8 @@ public class Main
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Erro de configuração!", JOptionPane.WARNING_MESSAGE);
 		}
 
-		dados = new BaseDados("data/produtos.txt", "data/facturas.txt", "data/linhas_factura.txt");
+		dados = new BaseDados(
+				"data/produtos.txt", "data/facturas.txt", "data/linhas_factura.txt");
 		try
 		{
 			dados.carrega();

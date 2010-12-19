@@ -34,11 +34,11 @@
 	<panel name="Datas" text="Data de Fabrico" columns="6" top="20" gap="2" border="true" bottom="20" left="80" >
 		
 		<label text="Dia"   />
-		<textfield name="dia" columns="2"   />
+		<textfield name="dia" columns="5"   />
 		<label text="Mes" />
-		<textfield name="mes" columns="2"   />
+		<textfield name="mes" columns="5"   />
 		<label text="Codigo de Ano" />
-		<textfield name="ano" columns="2"   />
+		<textfield name="ano" columns="10"   />
 
 		</panel>
 	

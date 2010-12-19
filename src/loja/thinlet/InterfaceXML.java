@@ -4,19 +4,12 @@ import java.awt.TextArea;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-//import java.awt.event.ActionEvent;
-//import java.awt.event.MouseEvent;
-//import java.awt.event.MouseListener;
-//import java.awt.event.WindowAdapter;
-//import java.awt.event.WindowEvent;
-//import java.awt.event.WindowListener;
-
-//import javax.swing.WindowConstants;
 
 import loja.BaseDados;
 import loja.Factura;
 import loja.Produto;
-import thinlet.*;
+import thinlet.FrameLauncher;
+import thinlet.Thinlet;
 
 
 public class InterfaceXML extends Thinlet{
@@ -25,9 +18,11 @@ public class InterfaceXML extends Thinlet{
 	private WProdutoXML window_produto = null;
 	private WFacturaXML window_factura = null;
 	private WEncomendaXML window_encomenda = null;
+	private WStockXML window_stock = null;
 	public static Moldura m_produto = null;
 	public static Moldura m_factura = null;
 	public static Moldura m_encomenda = null;
+	public static Moldura m_stock = null;
 	private TextArea text_area = new TextArea();;
 	private static final String	separador			= "______________________________________________________________________________________________\n";
 
@@ -39,10 +34,11 @@ public class InterfaceXML extends Thinlet{
 		this.window_produto = new WProdutoXML(b_dados);
 		this.window_factura = new WFacturaXML(b_dados);
 		this.window_encomenda= new WEncomendaXML(b_dados);
+		this.window_stock = new WStockXML(b_dados);
 		this.m_produto = new Moldura("Produto", window_produto, 450, 350, false);
 		this.m_factura = new Moldura("Factura", window_factura, 800, 600, false);
 		this.m_encomenda = new Moldura("Encomenda", window_encomenda, 800, 600, false);
-	
+		this.m_stock = new Moldura("Stock", window_stock, 500, 500, false);
 
 	}
 
@@ -72,6 +68,10 @@ public class InterfaceXML extends Thinlet{
 	
 	public void gerirEncomenda(){
 		m_encomenda.setVisible(true);
+	}
+	
+	public void gerirStock(){
+		m_stock.setVisible(true);
 	}
 	
 	public void listarFactura(Object text_area_xml){
