@@ -1,5 +1,9 @@
 package loja.thinlet;
 import java.awt.TextArea;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 //import java.awt.event.ActionEvent;
 //import java.awt.event.MouseEvent;
 //import java.awt.event.MouseListener;
@@ -32,7 +36,7 @@ public class InterfaceXML extends Thinlet{
 		this.b_dados=dados;
 		this.window_produto = new WProdutoXML(b_dados);
 		this.window_factura = new WFacturaXML(b_dados);
-		this.m_produto = new Moldura("Produto", window_produto, 400, 300, false);
+		this.m_produto = new Moldura("Produto", window_produto, 450, 350, false);
 		this.m_factura = new Moldura("Factura", window_factura, 800, 600, false);
 
 	}
@@ -91,5 +95,17 @@ public class InterfaceXML extends Thinlet{
 	public static void main(String[] args) throws Exception{
 //		FrameLauncher fl = new FrameLauncher("Loja", new InterfaceXML(), 400, 300);
 
+	}
+	public void acercaPrograma(){
+		
+	
+		Icon icon = new ImageIcon("images/help.gif");
+		
+		JOptionPane
+		.showMessageDialog(
+				null,
+				" Programa profissional de Ponto de Venda da Software Power Solutions. \n Gestão integrada de: \n Produtos; \n Facturas; \n Fornecedores; \n Clientes.",
+				"Janela de informação",
+				JOptionPane.INFORMATION_MESSAGE,icon);
 	}
 }

@@ -48,13 +48,7 @@ public class Main
 	//		 Escolha aqui qual das interfaces pretende
 //		iface = new InterfaceJanelas(dados);
 //			iface = new InterfaceTextual(dados);
-			try {
-				InterfaceXML int_xml = new InterfaceXML(dados);
-				int_xml.Mostra();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		
 //			try {
 //				new FrameLauncher("Loja", new InterfaceXML(dados), 400, 300);
 //			} catch (Exception e) {
@@ -78,9 +72,29 @@ public class Main
 		finally
 		{
 			Icon icon = new ImageIcon("images/pos.gif");
-			JOptionPane.showMessageDialog(null, "Obrigado por ter escolhido o QUASAR POS!\nCopyright FBA, 2010", "Point Of Sale",
+			JOptionPane.showMessageDialog(null, "Você esta a utilizar o software 'POS' mais Poderoso do mundo !\nCopyright Software Power Solutions", "Software Power Solutions - POS",
 					JOptionPane.PLAIN_MESSAGE, icon);
+		boolean passa_login = false;
+		Authentication auth = new Authentication(null);
+		do{
+		passa_login = auth.login();
+		}while(!passa_login || (!auth.getLogin().equals("paulo gil") || !auth.getPassword().equals("password")));
+			
+			
+			try {
+				InterfaceXML int_xml = new InterfaceXML(dados);
+				int_xml.Mostra();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+		
+		
 		}
+		
+		
+		
 	}
 
 }

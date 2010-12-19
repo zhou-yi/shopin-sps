@@ -29,7 +29,7 @@
     </menu>
     
      <menu text="Ajuda">
-      <menuitem text="Acerca Deste Programa" />
+      <menuitem text="Acerca Deste Programa" action="acercaPrograma()" />
     </menu>
   </menubar>
   
