@@ -1,0 +1,12 @@
+120 Café7 2ml  2 17 pilanobife     	
+121 Café6 1ml  3 11 pilanaposta 
+122 Café5 0ml  4 12 pilanolombo 
+123 Café4 17ml 5 13 pilanoabacaxi
+124 Café3 11ml 5 14 pilanojacari
+125 Café2 2ml  7 16 pilanolinguado
+126 Café1 1ml  9 17 pilanolagostim 
+
+  
+
+
+
