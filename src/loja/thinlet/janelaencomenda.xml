@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<splitpane orientation="vertical" divider="20" >
+
+<panel  columns="8" gap="4" >
+<label text="código" />
+<textfield name="codigo" columns="8" "/>
+<label text="dia"/>
+<textfield name="dia" columns="2"/>
+<label text="mês" />
+<textfield name="mes" columns="2"/>
+<label text="ano"/>
+<textfield name="ano" columns="4"/>
+
+
+</panel>
+
+<splitpane orientation="horizontal" divider="200">
+<splitpane orientation="vertical" divider="120">
+
+
+
+<panel text="Tipo de Fornecedor" font="bold" columns="1" gap="4" border="true">
+ 
+<checkbox text="Cafe" group="group" name="Cafe"  selected="true"/>
+<checkbox text="Bebidas" group="group" name ="Bebidas"/>
+<checkbox text="Alimentos" group="group" name ="Alimentícios"/>
+
+</panel>
+

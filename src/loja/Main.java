@@ -71,14 +71,14 @@ public class Main
 		}
 		finally
 		{
-			Icon icon = new ImageIcon("images/pos.gif");
-			JOptionPane.showMessageDialog(null, "Você esta a utilizar o software 'POS' mais Poderoso do mundo !\nCopyright Software Power Solutions", "Software Power Solutions - POS",
-					JOptionPane.PLAIN_MESSAGE, icon);
-		boolean passa_login = false;
-		Authentication auth = new Authentication(null);
-		do{
-		passa_login = auth.login();
-		}while(!passa_login || (!auth.getLogin().equals("paulo gil") || !auth.getPassword().equals("password")));
+//			Icon icon = new ImageIcon("images/pos.gif");
+//			JOptionPane.showMessageDialog(null, "Você esta a utilizar o software 'POS' mais Poderoso do mundo !\nCopyright Software Power Solutions", "Software Power Solutions - POS",
+//					JOptionPane.PLAIN_MESSAGE, icon);
+//		boolean passa_login = false;
+//		Authentication auth = new Authentication(null);
+//		do{
+//		passa_login = auth.login();
+//		}while(!passa_login || (!auth.getLogin().equals("paulo gil") || !auth.getPassword().equals("password")));
 			
 			
 			try {

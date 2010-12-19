@@ -24,8 +24,10 @@ public class InterfaceXML extends Thinlet{
 	private BaseDados b_dados=null;
 	private WProdutoXML window_produto = null;
 	private WFacturaXML window_factura = null;
+	private WEncomendaXML window_encomenda = null;
 	public static Moldura m_produto = null;
 	public static Moldura m_factura = null;
+	public static Moldura m_encomenda = null;
 	private TextArea text_area = new TextArea();;
 	private static final String	separador			= "______________________________________________________________________________________________\n";
 
@@ -36,8 +38,10 @@ public class InterfaceXML extends Thinlet{
 		this.b_dados=dados;
 		this.window_produto = new WProdutoXML(b_dados);
 		this.window_factura = new WFacturaXML(b_dados);
+		this.window_encomenda= new WEncomendaXML(b_dados);
 		this.m_produto = new Moldura("Produto", window_produto, 450, 350, false);
 		this.m_factura = new Moldura("Factura", window_factura, 800, 600, false);
+		this.m_encomenda = new Moldura("Encomenda", window_encomenda, 800, 600, false);
 
 	}
 
@@ -64,6 +68,11 @@ public class InterfaceXML extends Thinlet{
 	public void gerirFactura(){
 		m_factura.setVisible(true);
 	}
+	
+	public void gerirEncomenda(){
+		m_encomenda.setVisible(true);
+	}
+	
 	public void listarFactura(Object text_area_xml){
 
 		for (Factura f : b_dados.facturas())
