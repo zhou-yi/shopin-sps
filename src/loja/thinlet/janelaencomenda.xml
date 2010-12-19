@@ -1,10 +1,57 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<panel text="Tipo de Fornecedor" font="bold" columns="1" gap="4" border="true">
+
+
+
+<splitpane orientation="horizontal" divider="200">
+<splitpane orientation="vertical" divider="120">
+
+
+
+<panel text="Tipo De Fornecedor" font="bold" columns="1" gap="4" border="true">
  
-<checkbox text="Cafe" group="group" name="Cafe"  selected="true"/>
-<checkbox text="Bebidas" group="group" name ="Bebidas"/>
-<checkbox text="Alimentos" group="group" name ="Alimentícios"/>
+<checkbox text="Bebidas" group="group" name="perecivel"  selected="true"/>
+<checkbox text="Café" group="group"/>
+<checkbox text="Alimentos" group="group"/>
 
 </panel>
+
+<panel columns="1"  >
+<combobox name="combo_box" text="Escolher Produto" weightx="1"  >
+
+
+</combobox>
+
+<panel text="Encomenda" font="bold" columns="2" gap="4" border="true">
+<label text="Quantidade"/>
+<textfield text="1" name="quantidade" columns="10"/>
+<label text="Valor unitário" />
+<textfield text="1.0" name="valorunitario" columns="10"/>
+<label text="Subtotal"/>
+<textfield text="1.0" name="subtotal" columns="10"/>
+</panel>
+<panel columns="2">
+<button text="Adiciona" weightx="1" weighty="1"   />
+<button text="Retira"   weightx="1" weighty="1" />
+</panel>
+</panel>
+
+</splitpane>
+<splitpane orientation="vertical" divider="550">
+<panel  text="Linhas da Encomenda" font="bold" border="true">
+<textarea name="text_area" weightx="1" weighty="1"/>
+</panel>
+
+
+
+
+<panel columns="2" gap="4">
+<button text="Enviar encomenda" weightx="1" weighty="1" />
+<button text="Cancelar encomenda"   weightx="1" weighty="1" />
+
+</panel>
+</splitpane>
+</splitpane>
+
+
 

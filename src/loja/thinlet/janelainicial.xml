@@ -21,6 +21,9 @@
         <menuitem text="Gerir" action="gerirEncomenda()" />        
         <menuitem text="Listar"/>
       </menu>
+      <menu text="Stocks">
+         <menuitem text="Listar" />
+      </menu>
       <menu text="Facturas">
         <menuitem text="Gerir" action="gerirFactura()" />        
         <menuitem text="Listar" action="listarFactura(text_area_xml)"/>
