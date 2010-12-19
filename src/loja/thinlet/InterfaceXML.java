@@ -87,6 +87,10 @@ public class InterfaceXML extends Thinlet{
 		m_stock.setVisible(true);
 	}
 	
+	public void gerirFornecedor(){
+		m_fornecedor.setVisible(true);
+	}
+	
 	public void listarFornecedores(Object text_area_xml){
 
 		for (Fornecedor f : b_dados.fornecedores())

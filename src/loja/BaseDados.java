@@ -40,6 +40,7 @@ public final class BaseDados
 	private List<Produto>	produtos	= new ArrayList<Produto>();
 	private List<Factura>	facturas	= new ArrayList<Factura>();
 	public static LinkedList<Fornecedor> fornecedores = new LinkedList<Fornecedor>();
+	private static LinkedList<Encomenda> encomendas = new LinkedList<Encomenda>();
 
 	// private List<Produto> produtos = new Vector<Produto>();
 	// private List<Factura> facturas = new Vector<Factura>();
@@ -61,6 +62,10 @@ public final class BaseDados
 		ficheiroFornecedores = fFornecedores;
 		ficheiroEncomenda = fEncomenda;
 		ficheiroLinhasEncomenda = fLinhasEncomenda;
+	}
+
+	public BaseDados() {
+		// TODO Auto-generated constructor stub
 	}
 
 	/***********************************************************
@@ -86,6 +91,10 @@ public final class BaseDados
 	public boolean existe(Produto p)
 	{
 		return produtos.contains(p);
+	}
+	public boolean existe(Fornecedor f)
+	{
+		return fornecedores.contains(f);
 	}
 
 	/***********************************************************
@@ -137,6 +146,11 @@ public final class BaseDados
 		if (existe(f)) retira(f);
 		facturas.add(f);
 	}
+	public void adiciona(Fornecedor f)
+	{
+		if (existe(f)) retira(f);
+		fornecedores.add(f);
+	}
 
 	/***********************************************************
 	 * @param p
@@ -145,6 +159,12 @@ public final class BaseDados
 	{
 		assert existe(p);
 		produtos.remove(p);
+	}
+	
+	public void retira(Fornecedor f)
+	{
+		assert existe(f);
+		fornecedores.remove(f);
 	}
 
 	/***********************************************************
@@ -167,6 +187,7 @@ public final class BaseDados
 		carregaProdutos(inicializaFicheiro(ficheiroProdutos));
 		carregaFacturas(inicializaFicheiro(ficheiroFacturas), inicializaFicheiro(ficheiroLinhasFactura));
 		carregaFornecedores(inicializaFicheiro(ficheiroFornecedores));
+		carregaEncomendas(inicializaFicheiro(ficheiroEncomenda), inicializaFicheiro(ficheiroLinhasEncomenda));
 		
 	}
 
@@ -252,6 +273,15 @@ public final class BaseDados
 		 e.printStackTrace();
 		 return;
 		 }
+		 try
+			{
+				guardaEncomendas(new PrintWriter(new File(ficheiroEncomenda)), new PrintWriter(new File(ficheiroLinhasEncomenda)));
+			}
+			catch (FileNotFoundException e)
+			{
+				e.printStackTrace();
+				return;
+			}
 	}
 
 	/***********************************************************
@@ -441,7 +471,7 @@ public final class BaseDados
 			System.out.println(f);
 	}
 
-	public static LinkedList<Fornecedor> fornecedores()
+	public LinkedList<Fornecedor> fornecedores()
 	{
 		return fornecedores;
 	}
@@ -454,4 +484,71 @@ public final class BaseDados
 		}
 		out.close();
 	}
+	private void carregaEncomendas(Scanner f_encomendas, Scanner f_linhas_encomeda)
+	{	
+		int id;
+		int ano;
+		int mes;
+		int dia;
+		boolean finalizada;
+
+		while(f_encomendas.hasNext())
+		{
+			id 	= f_encomendas.nextInt();
+			ano = f_encomendas.nextInt();
+			mes = f_encomendas.nextInt();
+			dia = f_encomendas.nextInt();
+			finalizada = f_encomendas.nextBoolean();
+
+			encomendas.add(new Encomenda(id, new Data(dia, mes, ano), finalizada));
+		}
+
+		for(Fornecedor f: fornecedores)
+			System.out.println(f);
+
+		double quantidade;
+		double preco_unitario;
+		String nomeProduto;
+		String nomeFornecedor;
+
+		while(f_linhas_encomeda.hasNext())
+		{
+			id 				= f_linhas_encomeda.nextInt();
+			quantidade 		= f_linhas_encomeda.nextInt();
+			preco_unitario 	= f_linhas_encomeda.nextInt();
+			nomeProduto 	= f_linhas_encomeda.nextLine().trim();
+			nomeFornecedor 	= f_linhas_encomeda.nextLine().trim();
+
+			for(Encomenda e: encomendas)
+			{
+				if(e.getId() == id)
+					e.getLinhaEncomenda().add(new LinhaEncomenda(id, nomeFornecedor, nomeProduto, quantidade, preco_unitario));
+			}
+		}
+		
+	}
+	
+	private void guardaEncomendas(PrintWriter enc, PrintWriter lin_enc)
+	{	
+		for (Encomenda e: encomendas)
+		{
+			enc.println(e.getId() + " " + e.getData().getAno() + " " + e.getData().getMes() +
+					" " + e.getData().getDia() + " " + e.finalizada());
+			
+			for(LinhaEncomenda l: e.getLinhaEncomenda())
+			{
+				lin_enc.println(l.getIdEncomenda() + " " + l.getQuantidade() + " " + l.getValor_unitario() +
+						" " + l.getNomeProduto() + "\n" + l.getNomeFornecedor());
+			}
+		}
+		enc.close();
+		lin_enc.close();
+	}
+
+	public LinkedList<Encomenda> encomendas()
+	{
+		return encomendas;
+	}
 }
+
+

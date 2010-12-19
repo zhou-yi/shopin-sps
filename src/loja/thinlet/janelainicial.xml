@@ -18,9 +18,11 @@
         <menuitem text="Listar" action="listarProduto(text_area_xml)"/>
       </menu>
       <menu text="Fornecedores">
-        <menuitem text="Adicionar" action="adicionarFornecedor()" />        
-        <menuitem text="Remover" action="removerFornecedor()" /> 
+        <menuitem text="Gerir" action="gerirFornecedor()" />        
         <menuitem text="Listar" action="listarFornecedores(text_area_xml)" />
+      </menu>
+      <menu text="Encomenda">
+        <menuitem text="Gerir" action="gerirEncomenda()" />        
       </menu>
       
       <menu text="Facturas">

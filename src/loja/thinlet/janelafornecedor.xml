@@ -1,2 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
+
+<panel>
+
+<panel columns="1"  >
+<combobox name="combo_box" text="Escolher Fornecedor" weightx="1"  init="iniciaComboBox(this)"  >
+
+
+</combobox>
+
+
+
+</panel>
+
+<panel name="dados" text="Fornecedor" columns="2" top="20" left="10"  gap="20" border="true" bottom="20">
+		
+		<label text="Nome"   />
+			<textfield name="nome" columns="30"   />
+			<label text="contacto" />
+			<textfield name="contact" columns="30"  />
+			<label text="endereço"  />
+			<textfield name="adress" columns="30"   />
+			<panel columns="2"  >
+
+<button text="Adiciona" action="adiciona(nome.text,contact.text,adress.text)"  weightx="1"/>
+
+			
+
+<button text="Remove" action="retira(combo_box)"  weightx="1"/>
+</panel>
+		</panel>
+		
+</panel>

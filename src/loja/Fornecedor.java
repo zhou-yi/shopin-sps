@@ -17,6 +17,16 @@ public class Fornecedor
 		this.address = address;
 	}
 
+
+
+
+	public Fornecedor() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
 	public String getName() 
 	{
 		return name;
@@ -71,12 +81,5 @@ public class Fornecedor
 	{
 		return id + " " + productKind + "\n" +  name + "\n" + address + "\n" + contact;  
 	}
-	public void removeSupplier(String name)
-	{
-		if(name != null)
-			throw new NullPointerException();
-		
-		if(BaseDados.fornecedores().contains(name))
-			BaseDados.fornecedores().remove(BaseDados.fornecedores().contains(name));
-	}
+	
 }
