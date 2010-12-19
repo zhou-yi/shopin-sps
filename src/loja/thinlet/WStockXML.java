@@ -26,12 +26,16 @@ public class WStockXML extends Thinlet{
 		setString(text_area_xml, "text", text_area.getText());
 	}
 	
-	public void adiciona(){
-		
+	public void adiciona(Object nome, Object quantidade, Object text_area_xml){
+		String name = getString(nome,"text");
+		int amount = Integer.parseInt(getString(quantidade,"text"));
+		text_area.append("\n");
+		text_area.append("Foi adiciona a quantidade de: " + amount + name);
+		setString(text_area_xml, "text", text_area.getText());
 	}
 
-	public void remove(){
-		
+	public void remove(Object nome, Object quantidade, Object text_area_xml){
+	
 	}
 	
 }

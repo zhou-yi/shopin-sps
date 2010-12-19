@@ -4,12 +4,15 @@
 
 	<panel name="botoes" columns="3" weightx="1">
 		<button text="Lista Inventario" action="listar(text_area)" weightx="1"/>
-		<button text="Adiciona ao Stcok" action="adiciona()" weightx="1"/>
-		<button text="Remove do Stcok" action="remove()" weightx="1"/>
+		<button text="Adiciona ao Stock" action="adiciona(nome, quantidade, text_area)" weightx="1"/>
+		<button text="Remove do Stock" action="remove(nome, quantidade, text_area)" weightx="1"/>
 	</panel>
 	
-	<panel name="info" columns="3" weightx="1">
-		
+	<panel name="dados" text="Produto" columns="4" top="20" left="10"  gap="10" border="true" bottom="20">
+		<label text="Nome"  />
+		<textfield name="nome" columns="22"   />
+		<label text="Quantidade" />
+		<textfield name="quantidade" columns="22"   />
 	</panel>
 
 	<textarea name="text_area" weightx="1" weighty="1"/>
