@@ -17,7 +17,7 @@
 </panel>
 
 <panel columns="1"  >
-<combobox name="combo_box" text="Escolher Produto" init="iniciaComboBox(this)" weightx="1"   >
+<combobox name="combo_box" text="Escolher Produto"  weightx="1"   >
 
 
 </combobox>
