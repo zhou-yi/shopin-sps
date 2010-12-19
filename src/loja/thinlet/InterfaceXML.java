@@ -42,6 +42,7 @@ public class InterfaceXML extends Thinlet{
 		this.m_produto = new Moldura("Produto", window_produto, 450, 350, false);
 		this.m_factura = new Moldura("Factura", window_factura, 800, 600, false);
 		this.m_encomenda = new Moldura("Encomenda", window_encomenda, 800, 600, false);
+	
 
 	}
 
