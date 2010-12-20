@@ -92,6 +92,10 @@ public final class BaseDados
 	{
 		return produtos.contains(p);
 	}
+	public boolean existe(Encomenda e)
+	{
+		return encomendas.contains(e);
+	}
 	public boolean existe(Fornecedor f)
 	{
 		return fornecedores.contains(f);
@@ -137,6 +141,11 @@ public final class BaseDados
 		if (existe(p)) retira(p);
 		produtos.add(p);
 	}
+	public void adiciona(Encomenda e)
+	{
+		if (existe(e)) retira(e);
+		encomendas.add(e);
+	}
 
 	/***********************************************************
 	 * @param f
@@ -159,6 +168,11 @@ public final class BaseDados
 	{
 		assert existe(p);
 		produtos.remove(p);
+	}
+	public void retira(Encomenda e)
+	{
+		assert existe(e);
+		encomendas.remove(e);
 	}
 	
 	public void retira(Fornecedor f)
@@ -506,7 +520,9 @@ public final class BaseDados
 		for(Fornecedor f: fornecedores)
 			System.out.println(f);
 
+		String quantidadeAux;
 		double quantidade;
+		String preco_unitarioAux;
 		double preco_unitario;
 		String nomeProduto;
 		String nomeFornecedor;
@@ -514,8 +530,13 @@ public final class BaseDados
 		while(f_linhas_encomeda.hasNext())
 		{
 			id 				= f_linhas_encomeda.nextInt();
-			quantidade 		= f_linhas_encomeda.nextInt();
-			preco_unitario 	= f_linhas_encomeda.nextInt();
+		
+			quantidadeAux = f_linhas_encomeda.next();
+			quantidade = Double.parseDouble(quantidadeAux);
+			
+			preco_unitarioAux = f_linhas_encomeda.next();
+			preco_unitario = Double.parseDouble(preco_unitarioAux);
+			
 			nomeProduto 	= f_linhas_encomeda.nextLine().trim();
 			nomeFornecedor 	= f_linhas_encomeda.nextLine().trim();
 

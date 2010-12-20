@@ -191,7 +191,7 @@ public class WFacturaXML extends Thinlet{
 	public void retira(Object combo_box, Object quantidade,  Object text_area,Object codigo, Object dia ,Object mes, Object ano)
 	{
 		int index =getSelectedIndex(combo_box);
-			Object item = getItem(index);
+		Object item = getItem(index);
 
 		if (factura_corrente.isAnulada())
 			JOptionPane.showMessageDialog(this, "Não se pode modificar uma factura anulada!", "Erro!",
@@ -201,7 +201,7 @@ public class WFacturaXML extends Thinlet{
 			factura_corrente.retira((Produto) item, Double.parseDouble(getString(quantidade, "text")));
 			escreve(text_area, codigo, dia, mes, ano);
 		}
-		
+
 	}
 
 	public void procuraPorCodigo(Object codigo, Object text_area, Object dia ,Object mes, Object ano)
@@ -218,13 +218,13 @@ public class WFacturaXML extends Thinlet{
 		JOptionPane.showMessageDialog(this, "Inserida factura " + factura_corrente + " na base de dados!", "Sucesso",
 				JOptionPane.PLAIN_MESSAGE);
 	}
-	
+
 	public void cancela(){
 		InterfaceXML.m_factura.setVisible(false);
 	}
 
 	public Factura getFactura() {
-return factura_corrente;		
+		return factura_corrente;		
 	}
 
 
