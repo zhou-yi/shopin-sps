@@ -1,0 +1,1 @@
+This project aims at developing a small to medium sized shop management system in Java, encompassing front-office (points of sale) and back-office (clients and suppliers management, stocks management) facilities.
